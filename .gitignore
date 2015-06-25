@@ -1,6 +1,11 @@
 /vendor
+
 /node_modules
+
 .env
+
 DiplomskiRad.iws
+
 .idea\workspace.xml
+
 .idea\dataSources.local.xml

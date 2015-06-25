@@ -1,0 +1,9 @@
+.formError .formErrorArrow .line3 {
+    display: none !important;
+}
+
+.remember-label {
+    padding-left: 0px !important;
+    font-weight: bold !important;
+    margin-right: 25px;
+}

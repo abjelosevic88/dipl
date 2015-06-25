@@ -1,0 +1,44 @@
+body {
+	margin-top: 100px; /* 100px is double the height of the navbar - I made it a big larger for some more space - keep it at 50px at least if you want to use the fixed top nav */
+}
+
+footer {
+	margin: 50px 0;
+}
+
+.alert-fixed-top {
+    left: 0;
+    position: fixed;
+    top: 47px;
+    width: 100%;
+    z-index: 1030;
+}
+
+.navbar.navbar-default.navbar-fixed-bottom {
+    bottom: -20px;
+}
+
+.navbar-text {
+    margin-top: 5px;
+}
+
+.bottom-nav-email {
+    bottom: -21px;
+    height: 25px;
+    margin-top: 2px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.top-search
+{
+    display: inline-table;
+}
+
+.input-group-btn {
+    width: auto;
+}
+
+.navbar-form {
+    margin-bottom: 12px;
+}

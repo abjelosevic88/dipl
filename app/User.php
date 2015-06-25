@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Support\Facades\Config;
 use Jenssegers\Mongodb\Model as Eloquent;
 
 class User extends Eloquent implements AuthenticatableContract
@@ -55,6 +56,18 @@ class User extends Eloquent implements AuthenticatableContract
     public function getReminderEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Gets profile picture attribute. If value is empty use default picture.
+     */
+    public function getProfilePictureAttribute()
+    {
+//        die("<pre>".print_r(Config::get("global_test.testStr"), true)."</pre>");
+        if (empty($this->attributes['profile_picture']))
+        {
+            return asset(env('USER_DEFAULT_PICTURE_PATH'));
+        }
     }
 }
 

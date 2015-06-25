@@ -70,10 +70,17 @@ Route::group(array('before' => 'auth'), function()
         'uses'	=> 'AccountController@getSignOut'
     ));
 
-    // Profile page
+    // Show Profile page
     Route::get('/account/show/{username}', [
         'as'    =>  'account-show',
         'uses'  =>  'ProfileController@show'
+    ]);
+
+    // Edit Profile page
+    Route::get('/account/show/{username}/edit', [
+        'as'            =>  'account-edit',
+        'uses'          =>  'ProfileController@edit',
+        'middleware'    =>  'user-edit-profile'
     ]);
 
     // Admin page

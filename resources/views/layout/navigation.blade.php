@@ -30,7 +30,7 @@
 					<ul class="nav navbar-nav navbar-right">
                         <!-- Profile Secion -->
                         <li class=" <?php echo ((URL::current() == URL::route("support")) ? " active" : ""); ?>" >
-                            <a href="{!! URL::route('support') !!}">
+                            <a href="{!! URL::route('account-show', [Auth::user()->username]) !!}">
                                 <i class="fa fa-user"></i> Profile
                             </a>
                         </li>

@@ -1,6 +1,7 @@
 @extends("layout.main")
 
 @section("content")
+    Edit
     <div class="container">
 	    <div class="row">
             <div class="col-lg-4">
@@ -17,6 +18,8 @@
                     </a>
                     <div class="caption">
                         <h3> {!! ucfirst($user->username) !!} </h3>
+                        <span class="" rel="tooltip" data-placement="bottom" title="Edit User name"><i class="fa-pencil-square-o fa-2x"></i></span>
+                        <!-- fa-pencil-square-o -->
                         <p class="text-justify">
                             Lorem ipsum dolor sit amet,
                             consectetur adipisicing elit,

@@ -1,0 +1,12 @@
+.profile-picture {
+    width: 300px;
+    height: auto;
+}
+
+.profile-thumbnail {
+    width: 300px;
+}
+
+.profile-social-icons {
+    display: inline-block;
+}

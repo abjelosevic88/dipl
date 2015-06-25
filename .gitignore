@@ -1,4 +1,6 @@
 /vendor
 /node_modules
 .env
-.idea/
+DiplomskiRad.iws
+.idea\workspace.xml
+.idea\dataSources.local.xml

@@ -10,12 +10,13 @@
                     {!! isset($user->last_name) ? $user->last_name : env('LAST_NAME'); !!}
                 </h1>
                 <div class="thumbnail profile-thumbnail">
-                    <a href="http://www.linkedin.com/profile/view?id=261506890&trk=spm_pic" target="_blank">
-                        <img
-                            src="{{ $user->profile_picture }}"
-                            alt="{{ $user->username }}"
-                            class="img-thumbnail profile-picture">
-                    </a>
+                    <img id="profile-image" src="{{ $user->profile_picture }}" alt="{{ $user->username }}" class="img-thumbnail profile-picture">
+                    <div id="profile-edit-image" class="profile-edit-image">
+                        <img id="edit-image" src="{{ $user->profile_picture }}" class="edit-image">
+                        {{-- <form action="">
+                            File: <input type="file" name="myfile">
+                        </form> --}}
+                    </div>
                     <div class="caption">
                         <h3> {!! ucfirst($user->username) !!} </h3>
                         <span class="" rel="tooltip" data-placement="bottom" title="Edit User name"><i class="fa-pencil-square-o fa-2x"></i></span>
@@ -52,6 +53,24 @@
             </div>
         </div>
 	</div>
+@stop
+
+@section('head-script')
+<script type="text/javascript">
+    $(document).ready(function() { 
+        $('#profile-image').click(function() { 
+            $.blockUI({ 
+                onOverlayClick: $.unblockUI,
+                message: $('#profile-edit-image'),
+                css: { 
+                    top:  ($(window).height() - 400) /2 + 'px', 
+                    left: ($(window).width() - 400) /2 + 'px', 
+                    width: '400px' 
+                } 
+            }); 
+        });
+    }); 
+</script>
 @stop
 
 @section('head-style')

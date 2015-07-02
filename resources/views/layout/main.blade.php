@@ -10,7 +10,7 @@
         {!! HTML::style('css/font-awesome.min.css') !!}
 
 	    <!-- JQuery -->
-	     {!! HTML::script('js/jquery.min.js') !!}
+	    {!! HTML::script('js/jquery.min.js') !!}
 
 	    <!-- Sliders CSS -->
         {{--{!! HTML::style('css/sliders.css') !!}--}}
@@ -86,5 +86,8 @@
 
     	<!-- Sliders JQuery -->
     	{!! HTML::script('js/jquery.slides.min.js') !!}
+    	
+    	<!-- JQuery BlockUI modal box -->
+    	{!! HTML::script('js/blockUI.js') !!}
 	</body>
 </html>

@@ -1,6 +1,7 @@
 .profile-picture {
     width: 300px;
     height: auto;
+    cursor: pointer;
 }
 
 .profile-thumbnail {
@@ -9,4 +10,13 @@
 
 .profile-social-icons {
     display: inline-block;
+}
+
+.profile-edit-image {
+	display: none;
+}
+
+.edit-image {
+	width:400px;
+	height: 400px;
 }

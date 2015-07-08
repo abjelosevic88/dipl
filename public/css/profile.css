@@ -20,3 +20,11 @@
 	width:400px;
 	height: 400px;
 }
+
+.social-edit {
+	display: none;
+}
+
+.social-edit input {
+	width: 100%;
+}

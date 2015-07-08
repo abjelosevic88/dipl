@@ -32,7 +32,7 @@
                             <div class="profile-social-icons">
                                 @foreach ($user->social_links as $s_link_key => $s_link_value)
                                     @if (array_key_exists($s_link_key, $s_config))
-                                        <a href="{{ $s_link_value }}" alt="{{ $s_link_key }}">
+                                        <a href="#" alt="{{ $s_link_key }}" id="social-icon-{{ $s_link_key }}">
                                             <span
                                                 class=""
                                                 rel="tooltip"
@@ -41,6 +41,9 @@
                                                     <i class="fa {{ $s_config[$s_link_key] }} fa-3x"></i>
                                             </span>
                                         </a>
+                                        <div id="social-edit-{{ $s_link_key }}" class="social-edit">
+                                            <input type="text" name="social-{{ $s_link_key }}" value="{{ $s_link_value }}" />
+                                        </div>
                                     @endif
                                 @endforeach
                             </div>
@@ -49,7 +52,7 @@
                 </div>
             </div>
             <div class="col-lg-8">
-                .col-lg-8
+            TEST
             </div>
         </div>
 	</div>
@@ -69,6 +72,22 @@
                 } 
             }); 
         });
+        <?php
+            foreach ($user->social_links as $s_link_key => $s_link_value)
+            {
+                echo "$('#social-icon-$s_link_key').click(function() {
+                    $.blockUI({ 
+                        onOverlayClick: $.unblockUI,
+                        message: $('#social-edit-$s_link_key'),
+                        css: { 
+                            top:  ($(window).height() - 400) /2 + 'px', 
+                            left: ($(window).width() - 400) /2 + 'px', 
+                            width: '400px' 
+                        } 
+                    });
+                });";
+            }
+        ?>
     }); 
 </script>
 @stop

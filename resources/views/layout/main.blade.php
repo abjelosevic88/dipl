@@ -27,7 +27,7 @@
 	</head>
 	<body>
 
-		@if(Session::has('global'))
+		@if (Session::has('global'))
 			<div class="container">
 	            <div class="alert alert-info">
 	              <p class="lead text-center text-info">{!! Session::get('global') !!}</p>
@@ -35,7 +35,7 @@
 	        </div>
 		@endif
 
-		@if(Session::has('404'))
+		@if (Session::has('404'))
 			<h2>
 			    <span class="col-lg-12 text-center help-block alert-danger">
 			        {!! Session::get('404') !!}
@@ -54,7 +54,7 @@
 		@if (Session::has('msg-error'))
 			<div class="container">
 	            <div class="">
-	            @if($errors->any())
+	            @if ($errors->any())
 					<div class="alert alert-danger">
 						<a href="#" class="close" data-dismiss="alert">&times;</a>
 						{!! implode('', $errors->all('<li class="error">:message</li>')) !!}

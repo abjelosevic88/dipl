@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -17,9 +18,23 @@ class HomeController extends Controller
         return view('welcome');
     }
 
-    public function search()
+    /**
+     * Returns search view content.
+     * 
+     * @return \Illuminate\View\View
+     */
+    public function search(Request $request)
     {
-        return "SEARCH";
+        $search = $request->input('search');
+        $users = User::where('username', 'like', '%' . $search . '%')
+            ->orWhere('first_name', 'like', '%' . $search . '%')
+            ->orWhere('last_name', 'like', '%' . $search . '%')
+            ->get()->toArray();
+
+        return view('global.search')->with([
+            'users'     =>  $users,
+            'search'    =>  $search
+        ]);
     }
 
     public function support()

@@ -23,8 +23,7 @@ class User extends Eloquent implements AuthenticatableContract
      *
      * @param $query
      */
-    public function scopeActive($query)
-    {
+    public function scopeActive($query) {
         $query->where("active", 1);
     }
 
